@@ -40,6 +40,15 @@ def res_less(x):
 
 
 def res(x):
+    """
+    The main thing to notice for part 2 is that the grid is a square, and there are no obstacles in the same row/col of the starting point.
+
+    Let f(n) be the number of spaces you can reach after n steps. Let X be the length of your input grid.
+    f(n), f(n+X), f(n+2X), ...., is a quadratic, so you can find it by finding the first 3 values, then use that to interpolate the final answer.
+
+    - charr3, reddit
+    """
+
     if x < 3 * len(grid):
         return res_less(x)
     else:
